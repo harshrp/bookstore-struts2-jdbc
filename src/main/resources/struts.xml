@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="bookList" class="com.example.bookstore.action.BookAction" method="list">
+            <result name="success">/bookList.jsp</result>
+        </action>
+
+        <action name="addBook" class="com.example.bookstore.action.BookAction" method="add">
+            <result name="input">/addBook.jsp</result>
+            <result name="success" type="redirect">bookList</result>
+        </action>
+        <action name="saveBook" class="com.example.bookstore.action.BookAction" method="save">
+            <result name="success" type="redirect">bookList</result>
+        </action>
+
+        <action name="editBook" class="com.example.bookstore.action.BookAction" method="edit">
+            <result name="input">/editBook.jsp</result>
+            <result name="success" type="redirect">bookList</result>
+        </action>
+        <action name="updateBook" class="com.example.bookstore.action.BookAction" method="update">
+            <result name="success" type="redirect">bookList</result>
+        </action>
+
+        <action name="deleteBook" class="com.example.bookstore.action.BookAction" method="delete">
+            <result name="success" type="redirect">bookList</result>
+        </action>
+    </package>
+</struts>
